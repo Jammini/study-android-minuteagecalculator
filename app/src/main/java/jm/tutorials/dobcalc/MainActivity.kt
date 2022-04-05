@@ -11,9 +11,8 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-
-    private var tvSelectedDate : TextView? = null
-    private var tvAgeInMinutes : TextView? = null
+    private var tvSelectedDate: TextView? = null
+    private var tvAgeInMinutes: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,12 +53,10 @@ class MainActivity : AppCompatActivity() {
                     currentDate?.let {
                         val currentDateInMinutes = currentDate.time / 60000
                         val differenceInMinutes = currentDateInMinutes - selectedDateInMinutes
-                        tvAgeInMinutes?.text = differenceInMinutes.toString()
-
+                        val differenceInDay = differenceInMinutes / 720
+                        tvAgeInMinutes?.text = differenceInDay.toString()
                     }
                 }
-
-
             },
             year,
             month,
